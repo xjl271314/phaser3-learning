@@ -1,0 +1,36 @@
+.container {
+    .section-list {
+        .section-head {
+            font-size: 32px;
+            color: #FFF;
+            text-align: center;
+            /*这个值表示当元素距离页面视口（Viewport，也就是fixed定位的参照）顶部距离大于 0px 时，
+            元素以 relative 定位表现，而当元素距离页面视口小于 0px 时，
+            元素表现为 fixed 定位，也就会固定在顶部。*/
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+        }
+        .list-item{
+            font-size: 28px;
+            color: #333;
+            text-align: left;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        &:nth-child(1) {
+            .section-head {
+                background-color: blueviolet;
+            }
+        }
+        &:nth-child(2) {
+            .section-head {
+                background-color: brown;
+            }
+        }
+        &:nth-child(3) {
+            .section-head {
+                background-color: chocolate;
+            }
+        }
+    }
+}

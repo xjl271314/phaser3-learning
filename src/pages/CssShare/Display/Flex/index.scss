@@ -1,0 +1,109 @@
+@import '../../../../mixin.scss';
+$bgColor:#E40000;
+$radius:5px;
+.container {
+    $gap: 15px;
+    height: 100vh;
+    overflow-y: scroll;
+    background-color: $bgColor;
+    .page-title {
+        color: #FFF;
+        font-size: 24px;
+        margin: 1em auto;
+        font-weight: bold;
+    }
+    .knowledge-list {
+        text-align: left;
+        font-size: 18px;
+        color: #FFF;
+        padding-left: $gap;
+    }
+    .flex-container {
+        $column: 2;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: $gap;
+        .flex-item {
+            @include column($column);
+            margin-bottom: $gap;
+            &:nth-child(odd) {
+                padding-right: $gap / $column;
+            }
+            &:nth-child(even) {
+                padding-left: $gap / $column;
+            } //如果只有两个 那么就不需要margin-bottom
+            @include nItems($column, '.flex-item') {
+                margin-bottom: 0;
+            }
+            @include columnLastRowStyle($column) {
+                margin-bottom: 0;
+            }
+            .img-box {
+                width: 100%;
+                @include imgFixPercent();
+                .img {
+                    width: 100%;
+                    @include borderRadius($radius, 'top');
+                }
+                .sub-title {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    padding: 0 0.5em;
+                    background-color: rgba(0, 0, 0, .3);
+                    font-size: 12px;
+                    color: #FFF;
+                    @include textEllipsis(1);
+                }
+            }
+            .flex-info {
+                padding: 8px 10px;
+                height: 80px;
+                background-color: #FFF;
+                text-align: left;
+                @include borderRadius($radius, 'bottom');
+                .name {
+                    font-size: 14px;
+                    font-family: PingFangSC-Regular;
+                    font-weight: 400;
+                    color: #333; //文本超出隐藏
+                    height: 40px;
+                    margin-bottom: 5px;
+                    text-align: center;
+                    p{
+                        display: inline-block;
+                        text-align: left;
+                        em{
+                            font-style: normal;
+                            @include textEllipsis();
+                        }
+                    }
+                }
+                .content {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .price {
+                        font-size: 16px;
+                        font-family: PingFangSC-Semibold;
+                        font-weight: 600;
+                        color: #FF0050;
+                    }
+                    .attention{
+                        font-size: 14px;
+                        color: #999;
+                    }
+                }
+            }
+        }
+    }
+    .button {
+        @include lineHeight(50px, 50px);
+        color: #FFF;
+        padding: 1em;
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,32 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+}
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  font-size: 30px;
+  color: skyblue;
+}
+ul,ol{
+  list-style: none;
+}
+
+.flexColumnStart{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.symbol::before{
+  content:'¥';
+  font-size: .8em;
+  font-weight: bold;
+  color: currentColor;
+  margin-right: .2em;
+}

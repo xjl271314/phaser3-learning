@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactHookRedux from 'react-hooks-redux';
 import RouterConfig from './routes'
-import ErrorBoundary from '../src/pages/ErrorCatch'
+import ErrorBoundary from '@pages/ErrorCatch'
 
 import './App.scss';
 import './mixin.scss';

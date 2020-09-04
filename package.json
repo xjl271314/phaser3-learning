@@ -15,7 +15,7 @@
     "react-app-rewired": "^2.1.4"
   },
   "dependencies": {
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "phaser": "^3.20.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
